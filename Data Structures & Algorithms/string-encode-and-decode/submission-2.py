@@ -1,12 +1,14 @@
+
 class Solution:
 
-    def encode(self, arr):
-        s=""
-        for i in arr:
-            s+=str(len(i))+"/"+i
-        return s
+    def encode(self, strs: List[str]) -> str:
+        encode=""
+        for i in strs:
+            encode+=str(len(i)) + '/' + i
+            #print(encode)
+        return encode
 
-    def decode(self, s):
+    def decode(self, s: str) -> List[str]:
         i=0
         li=[]
         while i < len(s):
@@ -16,4 +18,6 @@ class Solution:
             length=int(s[i:j])
             li.append(s[j+1:j+1+length])
             i=length+j+1
-        return li    
+        return li
+    
+    
